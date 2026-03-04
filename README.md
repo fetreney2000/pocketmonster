@@ -30,6 +30,7 @@ npm run build        # regenerate standalone.html after code changes
 | Arrow keys | Move / navigate menus |
 | Z or Enter | Confirm |
 | X or Escape | Cancel / open pause menu |
+| Touch D-pad + A/B (mobile) | Move / confirm / cancel |
 
 ## Features
 

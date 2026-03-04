@@ -86,6 +86,7 @@ export class Game {
     // Core systems
     this.input        = new InputManager();
     this.stateManager = new StateManager(this);
+    this._setupTouchControls();
 
     // Game data (loaded async)
     this.data = {};
@@ -187,6 +188,42 @@ export class Game {
     this.uiContainer.style.top  = top  + 'px';
   }
 
+  _setupTouchControls() {
+    const controls = document.createElement('div');
+    controls.id = 'touch-controls';
+    controls.innerHTML = `
+      <div class="touch-dpad">
+        <button class="touch-btn touch-up" data-key="ArrowUp">▲</button>
+        <button class="touch-btn touch-left" data-key="ArrowLeft">◀</button>
+        <button class="touch-btn touch-right" data-key="ArrowRight">▶</button>
+        <button class="touch-btn touch-down" data-key="ArrowDown">▼</button>
+      </div>
+      <div class="touch-actions">
+        <button class="touch-btn touch-a" data-key="Enter">A</button>
+        <button class="touch-btn touch-b" data-key="Escape">B</button>
+      </div>
+    `;
+
+    const bind = (el, key) => {
+      el.addEventListener('pointerdown', e => {
+        e.preventDefault();
+        if (el.setPointerCapture) el.setPointerCapture(e.pointerId);
+        this.input.pressKey(key);
+      });
+      const release = e => {
+        e.preventDefault();
+        this.input.releaseKey(key);
+      };
+      el.addEventListener('pointerup', release);
+      el.addEventListener('pointercancel', release);
+      el.addEventListener('pointerleave', release);
+      el.addEventListener('contextmenu', e => e.preventDefault());
+    };
+
+    controls.querySelectorAll('[data-key]').forEach(el => bind(el, el.dataset.key));
+    this.uiContainer.appendChild(controls);
+  }
+
   save() {
     try {
       localStorage.setItem(SAVE_KEY, JSON.stringify({
@@ -236,7 +273,7 @@ class BootState {
       <div class="boot-title">PocketMonster</div>
       <div class="boot-subtitle">A Monster-Catching Adventure</div>
       <div id="boot-options"></div>
-      <div class="boot-hint">Arrow Keys + Z/Enter to select</div>
+      <div class="boot-hint">Arrow Keys / Touch D-pad + Z/Enter (A) to select</div>
     `;
     this._el.style.display = 'none';
     this.game.uiContainer.appendChild(this._el);
