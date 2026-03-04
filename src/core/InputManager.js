@@ -11,11 +11,7 @@ export class InputManager {
 
   _onKeyDown(e) {
     const key = e.key;
-    if (!this._keys[key]) {
-      this._justPressed[key] = true;
-      this._frameJustPressed[key] = true;
-    }
-    this._keys[key] = true;
+    this.pressKey(key);
 
     // Prevent arrow/space scrolling
     if (['ArrowUp','ArrowDown','ArrowLeft','ArrowRight',' '].includes(key)) {
@@ -25,6 +21,18 @@ export class InputManager {
 
   _onKeyUp(e) {
     const key = e.key;
+    this.releaseKey(key);
+  }
+
+  pressKey(key) {
+    if (!this._keys[key]) {
+      this._justPressed[key] = true;
+      this._frameJustPressed[key] = true;
+    }
+    this._keys[key] = true;
+  }
+
+  releaseKey(key) {
     this._keys[key] = false;
     this._justReleased[key] = true;
   }

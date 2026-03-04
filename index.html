@@ -40,6 +40,53 @@
     /* Allow pointer events on interactive overlays */
     #ui-overlay > * { pointer-events: auto; }
 
+    /* ── Touch Controls ───────────────────────────────── */
+    #touch-controls {
+      position: absolute;
+      inset: 0;
+      display: none;
+      z-index: 70;
+      touch-action: none;
+    }
+    .touch-dpad, .touch-actions { position: absolute; bottom: 18px; display: grid; gap: 10px; }
+    .touch-dpad {
+      left: 18px;
+      grid-template-columns: repeat(3, 52px);
+      grid-template-areas:
+        ". up ."
+        "left . right"
+        ". down .";
+    }
+    .touch-up { grid-area: up; }
+    .touch-left { grid-area: left; }
+    .touch-right { grid-area: right; }
+    .touch-down { grid-area: down; }
+    .touch-actions {
+      right: 18px;
+      grid-template-columns: repeat(2, 64px);
+      align-items: end;
+    }
+    .touch-btn {
+      border: 2px solid rgba(255,255,255,0.35);
+      border-radius: 50%;
+      background: rgba(20,20,30,0.45);
+      color: #fff;
+      font-size: 20px;
+      font-family: inherit;
+      width: 52px;
+      height: 52px;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: none;
+    }
+    .touch-a, .touch-b { width: 64px; height: 64px; font-size: 24px; font-weight: bold; }
+    .touch-a { border-color: rgba(79,195,247,0.7); }
+    .touch-b { border-color: rgba(255,111,97,0.75); }
+
+    @media (pointer: coarse), (hover: none) {
+      #touch-controls { display: block; }
+    }
+
     /* ── Boot Screen ──────────────────────────────────── */
     #boot-screen {
       position: absolute; inset: 0;
