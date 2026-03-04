@@ -216,7 +216,6 @@ export class Game {
       };
       el.addEventListener('pointerup', release);
       el.addEventListener('pointercancel', release);
-      el.addEventListener('pointerleave', release);
       el.addEventListener('contextmenu', e => e.preventDefault());
     };
 

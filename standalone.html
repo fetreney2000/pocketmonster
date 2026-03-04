@@ -76,7 +76,7 @@
     .touch-a { border-color: rgba(79,195,247,0.7); }
     .touch-b { border-color: rgba(255,111,97,0.75); }
 
-    @media (pointer: coarse) {
+    @media (pointer: coarse), (hover: none) {
       #touch-controls { display: block; }
     }
 
@@ -28731,7 +28731,6 @@ void main() {
         };
         el.addEventListener("pointerup", release);
         el.addEventListener("pointercancel", release);
-        el.addEventListener("pointerleave", release);
         el.addEventListener("contextmenu", (e) => e.preventDefault());
       };
       controls.querySelectorAll("[data-key]").forEach((el) => bind(el, el.dataset.key));
