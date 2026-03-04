@@ -1,0 +1,22 @@
+[
+  { "id": 1,  "name": "Ember Slash",   "type": "Fire",     "power": 40,  "accuracy": 100, "pp": 35, "priority": 0, "category": "physical", "effect": null,       "effectChance": 0 },
+  { "id": 2,  "name": "Flame Burst",   "type": "Fire",     "power": 65,  "accuracy": 100, "pp": 20, "priority": 0, "category": "special",  "effect": null,       "effectChance": 0 },
+  { "id": 3,  "name": "Scorching Ray", "type": "Fire",     "power": 90,  "accuracy": 85,  "pp": 10, "priority": 0, "category": "special",  "effect": "burn",     "effectChance": 0.30 },
+  { "id": 4,  "name": "Magma Surge",   "type": "Fire",     "power": 110, "accuracy": 80,  "pp": 5,  "priority": 0, "category": "special",  "effect": null,       "effectChance": 0 },
+  { "id": 5,  "name": "Aqua Dash",     "type": "Water",    "power": 40,  "accuracy": 100, "pp": 35, "priority": 1, "category": "physical", "effect": null,       "effectChance": 0 },
+  { "id": 6,  "name": "Water Pulse",   "type": "Water",    "power": 60,  "accuracy": 100, "pp": 25, "priority": 0, "category": "special",  "effect": null,       "effectChance": 0 },
+  { "id": 7,  "name": "Hydro Blast",   "type": "Water",    "power": 90,  "accuracy": 85,  "pp": 10, "priority": 0, "category": "special",  "effect": null,       "effectChance": 0 },
+  { "id": 8,  "name": "Toxic Foam",    "type": "Water",    "power": 65,  "accuracy": 90,  "pp": 15, "priority": 0, "category": "special",  "effect": "poison",   "effectChance": 0.30 },
+  { "id": 9,  "name": "Vine Whip",     "type": "Grass",    "power": 45,  "accuracy": 100, "pp": 35, "priority": 0, "category": "physical", "effect": null,       "effectChance": 0 },
+  { "id": 10, "name": "Leaf Blade",    "type": "Grass",    "power": 90,  "accuracy": 100, "pp": 15, "priority": 0, "category": "physical", "effect": null,       "effectChance": 0 },
+  { "id": 11, "name": "Solar Burst",   "type": "Grass",    "power": 120, "accuracy": 70,  "pp": 5,  "priority": 0, "category": "special",  "effect": null,       "effectChance": 0 },
+  { "id": 12, "name": "Slumber Spore", "type": "Grass",    "power": 40,  "accuracy": 75,  "pp": 15, "priority": 0, "category": "special",  "effect": "sleep",    "effectChance": 0.50 },
+  { "id": 13, "name": "Thunder Shock", "type": "Electric", "power": 40,  "accuracy": 100, "pp": 30, "priority": 0, "category": "special",  "effect": "paralyze", "effectChance": 0.10 },
+  { "id": 14, "name": "Volt Tackle",   "type": "Electric", "power": 85,  "accuracy": 100, "pp": 15, "priority": 0, "category": "physical", "effect": null,       "effectChance": 0 },
+  { "id": 15, "name": "Thunder Storm", "type": "Electric", "power": 110, "accuracy": 75,  "pp": 10, "priority": 0, "category": "special",  "effect": "paralyze", "effectChance": 0.30 },
+  { "id": 16, "name": "Charge Beam",   "type": "Electric", "power": 50,  "accuracy": 90,  "pp": 20, "priority": 0, "category": "special",  "effect": "paralyze", "effectChance": 0.70 },
+  { "id": 17, "name": "Tackle",        "type": "Normal",   "power": 40,  "accuracy": 100, "pp": 35, "priority": 0, "category": "physical", "effect": null,       "effectChance": 0 },
+  { "id": 18, "name": "Quick Strike",  "type": "Normal",   "power": 40,  "accuracy": 100, "pp": 35, "priority": 1, "category": "physical", "effect": null,       "effectChance": 0 },
+  { "id": 19, "name": "Body Slam",     "type": "Normal",   "power": 85,  "accuracy": 100, "pp": 15, "priority": 0, "category": "physical", "effect": "paralyze", "effectChance": 0.30 },
+  { "id": 20, "name": "Recover",       "type": "Normal",   "power": 0,   "accuracy": 100, "pp": 10, "priority": 0, "category": "status",   "effect": "heal",     "effectChance": 1.00 }
+]

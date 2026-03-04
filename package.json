@@ -1,0 +1,9 @@
+{
+  "name": "pocketmonster",
+  "version": "1.0.0",
+  "description": "A browser-based monster-catching RPG",
+  "type": "module",
+  "scripts": {
+    "start": "npx serve ."
+  }
+}

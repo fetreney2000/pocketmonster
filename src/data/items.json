@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1, "name": "CaptureBall",
+    "type": "ball", "ballModifier": 1.0,
+    "description": "A standard ball for catching creatures.",
+    "color": "#E74C3C"
+  },
+  {
+    "id": 2, "name": "GreatBall",
+    "type": "ball", "ballModifier": 1.5,
+    "description": "A higher-quality ball with a better catch rate.",
+    "color": "#3498DB"
+  },
+  {
+    "id": 3, "name": "UltraBall",
+    "type": "ball", "ballModifier": 2.0,
+    "description": "An ultra-performance ball with the highest catch rate.",
+    "color": "#F39C12"
+  },
+  {
+    "id": 4, "name": "Potion",
+    "type": "heal", "healAmount": 20,
+    "description": "Restores 20 HP to one creature.",
+    "color": "#2ECC71"
+  },
+  {
+    "id": 5, "name": "Super Potion",
+    "type": "heal", "healAmount": 50,
+    "description": "Restores 50 HP to one creature.",
+    "color": "#27AE60"
+  },
+  {
+    "id": 6, "name": "Antidote",
+    "type": "status", "curesStatus": "poison",
+    "description": "Cures a poisoned creature.",
+    "color": "#9B59B6"
+  },
+  {
+    "id": 7, "name": "ParalyzeHeal",
+    "type": "status", "curesStatus": "paralyze",
+    "description": "Cures a paralyzed creature.",
+    "color": "#F1C40F"
+  },
+  {
+    "id": 8, "name": "Awakening",
+    "type": "status", "curesStatus": "sleep",
+    "description": "Wakes a sleeping creature.",
+    "color": "#1ABC9C"
+  },
+  {
+    "id": 9, "name": "BurnHeal",
+    "type": "status", "curesStatus": "burn",
+    "description": "Heals a burned creature.",
+    "color": "#E67E22"
+  },
+  {
+    "id": 10, "name": "FullRestore",
+    "type": "fullrestore",
+    "description": "Fully restores HP and cures all status conditions.",
+    "color": "#ECF0F1"
+  }
+]
