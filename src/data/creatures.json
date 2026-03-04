@@ -137,7 +137,7 @@
     "growthRate": "fast", "catchRate": 60,
     "learnset": [
       { "level": 1, "moveId": 17 }, { "level": 1, "moveId": 18 },
-      { "level": 7, "moveId": 19 }, { "level": 15, "moveId": 20 }, { "level": 25, "moveId": 19 }
+      { "level": 7, "moveId": 19 }, { "level": 15, "moveId": 20 }, { "level": 25, "moveId": 18 }
     ],
     "spriteFront": "fluffpaw_front", "spriteBack": "fluffpaw_back", "color": "#D7DBDD",
     "description": "A fluffy rabbit with surprisingly powerful kicks."
@@ -148,7 +148,7 @@
     "growthRate": "fast", "catchRate": 35,
     "learnset": [
       { "level": 1, "moveId": 17 }, { "level": 1, "moveId": 18 },
-      { "level": 7, "moveId": 19 }, { "level": 15, "moveId": 20 }, { "level": 25, "moveId": 19 }
+      { "level": 7, "moveId": 19 }, { "level": 15, "moveId": 20 }, { "level": 25, "moveId": 18 }
     ],
     "spriteFront": "tufftail_front", "spriteBack": "tufftail_back", "color": "#A9A9A9",
     "description": "A scrappy raccoon who never backs down from a fight."
@@ -159,7 +159,7 @@
     "growthRate": "slow", "catchRate": 15,
     "learnset": [
       { "level": 1, "moveId": 17 }, { "level": 1, "moveId": 18 },
-      { "level": 7, "moveId": 19 }, { "level": 15, "moveId": 20 }, { "level": 25, "moveId": 19 }
+      { "level": 7, "moveId": 19 }, { "level": 15, "moveId": 20 }, { "level": 25, "moveId": 18 }
     ],
     "spriteFront": "granitusk_front", "spriteBack": "granitusk_back", "color": "#808080",
     "description": "A massive rhino carved from living granite."

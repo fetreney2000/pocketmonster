@@ -92,9 +92,11 @@ export class EncounterSystem {
       });
 
     // Ensure at least one move
-    if (movesLearned.length === 0) {
+    if (movesLearned.length === 0 && species.learnset.length > 0) {
       const firstMove = this.moves.find(m => m.id === species.learnset[0].moveId);
-      movesLearned.push({ moveId: firstMove.id, currentPp: firstMove.pp, maxPp: firstMove.pp });
+      if (firstMove) {
+        movesLearned.push({ moveId: firstMove.id, currentPp: firstMove.pp, maxPp: firstMove.pp });
+      }
     }
 
     return {

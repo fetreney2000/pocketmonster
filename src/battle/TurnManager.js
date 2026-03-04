@@ -193,20 +193,22 @@ export class TurnManager {
 
     while (creature.exp >= expForLevel(creature.level + 1, growthRate)) {
       creature.level++;
-      // Recalculate stats (simplified — just bump by ~2%)
-      for (const stat of ['attack','defense','speed','special']) {
-        const base = species.baseStats[stat];
-        creature.stats[stat] = Math.floor((base * 2 + 100) * creature.level / 100 + 5);
+      // Recalculate stats
+      if (species) {
+        for (const stat of ['attack','defense','speed','special']) {
+          const base = species.baseStats[stat];
+          creature.stats[stat] = Math.floor((base * 2 + 100) * creature.level / 100 + 5);
+        }
+        const newMaxHp = Math.floor((species.baseStats.hp * 2 + 100) * creature.level / 100 + 10);
+        const hpGain   = newMaxHp - creature.maxHp;
+        creature.maxHp   = newMaxHp;
+        creature.currentHp = Math.min(creature.maxHp, creature.currentHp + hpGain);
       }
-      const newMaxHp = Math.floor((species.baseStats.hp * 2 + 100) * creature.level / 100 + 10);
-      const hpGain   = newMaxHp - creature.maxHp;
-      creature.maxHp   = newMaxHp;
-      creature.currentHp = Math.min(creature.maxHp, creature.currentHp + hpGain);
 
       await ui.showMessage(`${creature.displayName} grew to level ${creature.level}!`);
 
       // Learn new moves
-      const newMoves = species.learnset.filter(l => l.level === creature.level);
+      const newMoves = species ? species.learnset.filter(l => l.level === creature.level) : [];
       for (const lm of newMoves) {
         const moveData = gameData.moves.find(m => m.id === lm.moveId);
         if (!moveData) continue;
