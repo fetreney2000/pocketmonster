@@ -1,0 +1,56 @@
+name: Build & Release
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build standalone.html
+        run: npm run build
+
+      - name: Create release zip
+        run: |
+          zip pocketmonster.zip standalone.html README.md
+          echo "Zip contents:"
+          unzip -l pocketmonster.zip
+
+      - name: Get short SHA
+        id: sha
+        run: echo "short=$(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@c9d7ae9b5059b5a8862154b1e59b047544698218 # v2
+        with:
+          tag_name: release-${{ github.run_number }}
+          name: "PocketMonster – build #${{ github.run_number }}"
+          body: |
+            ## ▶ Download & Play
+
+            1. Download **pocketmonster.zip** below
+            2. Unzip it
+            3. Open **standalone.html** in any modern browser — no server needed!
+
+            ---
+            Built from commit ${{ steps.sha.outputs.short }}
+          files: pocketmonster.zip
+          make_latest: true

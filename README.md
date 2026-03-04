@@ -2,9 +2,18 @@
 
 A browser-based monster-catching RPG inspired by classic Game Boy RPGs, built with Three.js and ES6 modules. All creatures, regions, and characters are original.
 
-## ▶ Play instantly (no server needed)
+## ⬇ Download & Play
 
-Open **`standalone.html`** directly in any modern browser — no web server required.
+**Option 1 – GitHub Release (recommended)**
+1. Go to the [Releases page](../../releases/latest)
+2. Download **`pocketmonster.zip`**
+3. Unzip and open **`standalone.html`** in any modern browser — no server needed!
+
+**Option 2 – Source ZIP**
+Click **Code → Download ZIP** on the repository home page, unzip, and open `standalone.html`.
+
+**Option 3 – Direct file**
+If you already cloned the repo, open **`standalone.html`** directly from the project root.
 
 ## 🔧 Development
 
