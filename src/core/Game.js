@@ -209,10 +209,12 @@ export class Game {
         e.preventDefault();
         if (el.setPointerCapture) el.setPointerCapture(e.pointerId);
         this.input.pressKey(key);
+        window.dispatchEvent(new KeyboardEvent('keydown', { key }));
       });
       const release = e => {
         e.preventDefault();
         this.input.releaseKey(key);
+        window.dispatchEvent(new KeyboardEvent('keyup', { key }));
       };
       el.addEventListener('pointerup', release);
       el.addEventListener('pointercancel', release);
