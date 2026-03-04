@@ -107,12 +107,17 @@ export class Game {
   }
 
   async init() {
-    // Load all data files
-    const [creatures, moves, typeChart, items] = await Promise.all([
-      fetch('./src/data/creatures.json').then(r => r.json()),
-      fetch('./src/data/moves.json').then(r => r.json()),
-      fetch('./src/data/typeChart.json').then(r => r.json()),
-      fetch('./src/data/items.json').then(r => r.json()),
+    // Load all data files — dynamic import works both bundled (standalone) and served
+    const [
+      { default: creatures },
+      { default: moves },
+      { default: typeChart },
+      { default: items },
+    ] = await Promise.all([
+      import('../data/creatures.json', { with: { type: 'json' } }),
+      import('../data/moves.json',     { with: { type: 'json' } }),
+      import('../data/typeChart.json', { with: { type: 'json' } }),
+      import('../data/items.json',     { with: { type: 'json' } }),
     ]);
     this.data = { creatures, moves, typeChart, items };
 
