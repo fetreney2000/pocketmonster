@@ -1,0 +1,14 @@
+{
+  "name": "pocketmonster",
+  "version": "1.0.0",
+  "description": "A browser-based monster-catching RPG",
+  "type": "module",
+  "scripts": {
+    "start": "npx serve .",
+    "build": "node scripts/build-standalone.js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.27.3",
+    "three": "^0.183.2"
+  }
+}
